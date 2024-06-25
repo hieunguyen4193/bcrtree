@@ -1,0 +1,1319 @@
+[2J[Hdnapars: can't find input file "infile"
+Please enter a new file name> [2J[H
+DNA parsimony algorithm, version 3.697
+
+Setting for this run:
+  U                 Search for best tree?  Yes
+  S                        Search option?  More thorough search
+  V              Number of trees to save?  10000
+  J   Randomize input order of sequences?  No. Use input order
+  O                        Outgroup root?  No, use as outgroup species  1
+  T              Use Threshold parsimony?  No, use ordinary parsimony
+  N           Use Transversion parsimony?  No, count all steps
+  W                       Sites weighted?  No
+  M           Analyze multiple data sets?  No
+  I          Input sequences interleaved?  Yes
+  0   Terminal type (IBM PC, ANSI, none)?  ANSI
+  1    Print out the data at start of run  No
+  2  Print indications of progress of run  Yes
+  3                        Print out tree  Yes
+  4          Print out steps in each site  No
+  5  Print sequences at all nodes of tree  No
+  6       Write out trees onto tree file?  Yes
+
+  Y to accept these or type the letter for one to change
+
+Random number seed (must be odd)?
+Number of times to jumble?
+[2J[H
+DNA parsimony algorithm, version 3.697
+
+Setting for this run:
+  U                 Search for best tree?  Yes
+  S                        Search option?  More thorough search
+  V              Number of trees to save?  10000
+  J   Randomize input order of sequences?  Yes (seed =       1, 10 times)
+  O                        Outgroup root?  No, use as outgroup species  1
+  T              Use Threshold parsimony?  No, use ordinary parsimony
+  N           Use Transversion parsimony?  No, count all steps
+  W                       Sites weighted?  No
+  M           Analyze multiple data sets?  No
+  I          Input sequences interleaved?  Yes
+  0   Terminal type (IBM PC, ANSI, none)?  ANSI
+  1    Print out the data at start of run  No
+  2  Print indications of progress of run  Yes
+  3                        Print out tree  Yes
+  4          Print out steps in each site  No
+  5  Print sequences at all nodes of tree  No
+  6       Write out trees onto tree file?  Yes
+
+  Y to accept these or type the letter for one to change
+Type number of the outgroup:
+[2J[H
+DNA parsimony algorithm, version 3.697
+
+Setting for this run:
+  U                 Search for best tree?  Yes
+  S                        Search option?  More thorough search
+  V              Number of trees to save?  10000
+  J   Randomize input order of sequences?  Yes (seed =       1, 10 times)
+  O                        Outgroup root?  Yes, at sequence number  1
+  T              Use Threshold parsimony?  No, use ordinary parsimony
+  N           Use Transversion parsimony?  No, count all steps
+  W                       Sites weighted?  No
+  M           Analyze multiple data sets?  No
+  I          Input sequences interleaved?  Yes
+  0   Terminal type (IBM PC, ANSI, none)?  ANSI
+  1    Print out the data at start of run  No
+  2  Print indications of progress of run  Yes
+  3                        Print out tree  Yes
+  4          Print out steps in each site  No
+  5  Print sequences at all nodes of tree  No
+  6       Write out trees onto tree file?  Yes
+
+  Y to accept these or type the letter for one to change
+Rearrange on just one best tree? (type Y or N)
+[2J[H
+DNA parsimony algorithm, version 3.697
+
+Setting for this run:
+  U                 Search for best tree?  Yes
+  S                        Search option?  Rearrange on one best tree
+  V              Number of trees to save?  10000
+  J   Randomize input order of sequences?  Yes (seed =       1, 10 times)
+  O                        Outgroup root?  Yes, at sequence number  1
+  T              Use Threshold parsimony?  No, use ordinary parsimony
+  N           Use Transversion parsimony?  No, count all steps
+  W                       Sites weighted?  No
+  M           Analyze multiple data sets?  No
+  I          Input sequences interleaved?  Yes
+  0   Terminal type (IBM PC, ANSI, none)?  ANSI
+  1    Print out the data at start of run  No
+  2  Print indications of progress of run  Yes
+  3                        Print out tree  Yes
+  4          Print out steps in each site  No
+  5  Print sequences at all nodes of tree  No
+  6       Write out trees onto tree file?  Yes
+
+  Y to accept these or type the letter for one to change
+[2J[H
+DNA parsimony algorithm, version 3.697
+
+Setting for this run:
+  U                 Search for best tree?  Yes
+  S                        Search option?  Rearrange on one best tree
+  V              Number of trees to save?  10000
+  J   Randomize input order of sequences?  Yes (seed =       1, 10 times)
+  O                        Outgroup root?  Yes, at sequence number  1
+  T              Use Threshold parsimony?  No, use ordinary parsimony
+  N           Use Transversion parsimony?  No, count all steps
+  W                       Sites weighted?  No
+  M           Analyze multiple data sets?  No
+  I          Input sequences interleaved?  Yes
+  0   Terminal type (IBM PC, ANSI, none)?  ANSI
+  1    Print out the data at start of run  No
+  2  Print indications of progress of run  Yes
+  3                        Print out tree  Yes
+  4          Print out steps in each site  Yes
+  5  Print sequences at all nodes of tree  No
+  6       Write out trees onto tree file?  Yes
+
+  Y to accept these or type the letter for one to change
+[2J[H
+DNA parsimony algorithm, version 3.697
+
+Setting for this run:
+  U                 Search for best tree?  Yes
+  S                        Search option?  Rearrange on one best tree
+  V              Number of trees to save?  10000
+  J   Randomize input order of sequences?  Yes (seed =       1, 10 times)
+  O                        Outgroup root?  Yes, at sequence number  1
+  T              Use Threshold parsimony?  No, use ordinary parsimony
+  N           Use Transversion parsimony?  No, count all steps
+  W                       Sites weighted?  No
+  M           Analyze multiple data sets?  No
+  I          Input sequences interleaved?  Yes
+  0   Terminal type (IBM PC, ANSI, none)?  ANSI
+  1    Print out the data at start of run  No
+  2  Print indications of progress of run  Yes
+  3                        Print out tree  Yes
+  4          Print out steps in each site  Yes
+  5  Print sequences at all nodes of tree  Yes
+  .  Use dot-differencing to display them  Yes
+  6       Write out trees onto tree file?  Yes
+
+  Y to accept these or type the letter for one to change
+[2J[H
+DNA parsimony algorithm, version 3.697
+
+Setting for this run:
+  U                 Search for best tree?  Yes
+  S                        Search option?  Rearrange on one best tree
+  V              Number of trees to save?  10000
+  J   Randomize input order of sequences?  Yes (seed =       1, 10 times)
+  O                        Outgroup root?  Yes, at sequence number  1
+  T              Use Threshold parsimony?  No, use ordinary parsimony
+  N           Use Transversion parsimony?  No, count all steps
+  W                       Sites weighted?  No
+  M           Analyze multiple data sets?  No
+  I          Input sequences interleaved?  Yes
+  0   Terminal type (IBM PC, ANSI, none)?  ANSI
+  1    Print out the data at start of run  No
+  2  Print indications of progress of run  Yes
+  3                        Print out tree  Yes
+  4          Print out steps in each site  Yes
+  5  Print sequences at all nodes of tree  Yes
+  .  Use dot-differencing to display them  No
+  6       Write out trees onto tree file?  Yes
+
+  Y to accept these or type the letter for one to change
+Adding species:
+   1. seq78     
+   2. seq23     
+   3. seq52     
+   4. seq14     
+   5. seq91     
+   6. seq39     
+   7. seq92     
+   8. seq15     
+   9. seq11     
+  10. seq63     
+  11. seq82     
+  12. seq25     
+  13. seq96     
+  14. seq34     
+  15. seq48     
+  16. seq67     
+  17. seq26     
+  18. seq49     
+  19. seq58     
+  20. seq74     
+  21. seq33     
+  22. seq64     
+  23. seq7      
+  24. seq55     
+  25. seq103    
+  26. seq72     
+  27. seq2      
+  28. seq44     
+  29. GL        
+  30. seq1      
+  31. seq40     
+  32. seq37     
+  33. seq57     
+  34. seq84     
+  35. seq106    
+  36. seq76     
+  37. seq32     
+  38. seq71     
+  39. seq100    
+  40. seq60     
+  41. seq29     
+  42. seq36     
+  43. seq102    
+  44. seq75     
+  45. seq51     
+  46. seq45     
+  47. seq69     
+  48. seq70     
+  49. seq66     
+  50. seq73     
+  51. seq3      
+  52. seq12     
+  53. seq101    
+  54. seq88     
+  55. seq42     
+  56. seq56     
+  57. seq28     
+  58. seq97     
+  59. seq46     
+  60. seq6      
+  61. seq89     
+  62. seq80     
+  63. seq62     
+  64. seq50     
+  65. seq87     
+  66. seq105    
+  67. seq86     
+  68. seq22     
+  69. seq16     
+  70. seq30     
+  71. seq38     
+  72. seq41     
+  73. seq5      
+  74. seq19     
+  75. seq93     
+  76. seq65     
+  77. seq47     
+  78. seq20     
+  79. seq17     
+  80. seq77     
+  81. seq85     
+  82. seq4      
+  83. seq8      
+  84. seq98     
+  85. seq35     
+  86. seq13     
+  87. seq79     
+  88. seq27     
+  89. seq68     
+  90. seq18     
+  91. seq95     
+  92. seq104    
+  93. seq81     
+  94. seq9      
+  95. seq90     
+  96. seq83     
+  97. seq21     
+  98. seq99     
+  99. seq24     
+ 100. seq10     
+ 101. seq59     
+ 102. seq94     
+ 103. seq53     
+ 104. seq43     
+ 105. seq31     
+ 106. seq54     
+ 107. seq61     
+
+Doing global rearrangements on the first of the trees tied for best
+  !-----------------------------------------------------------------------!
+   .......................................................................
+   .......................................................................
+   .......................................................................
+
+Adding species:
+   1. seq73     
+   2. seq27     
+   3. seq71     
+   4. seq101    
+   5. seq63     
+   6. seq105    
+   7. seq32     
+   8. seq98     
+   9. seq56     
+  10. seq65     
+  11. seq37     
+  12. seq41     
+  13. seq33     
+  14. seq54     
+  15. seq99     
+  16. seq50     
+  17. seq30     
+  18. seq53     
+  19. seq5      
+  20. seq2      
+  21. seq17     
+  22. seq9      
+  23. seq46     
+  24. seq21     
+  25. seq94     
+  26. seq31     
+  27. seq12     
+  28. GL        
+  29. seq76     
+  30. seq39     
+  31. seq28     
+  32. seq79     
+  33. seq45     
+  34. seq87     
+  35. seq16     
+  36. seq48     
+  37. seq72     
+  38. seq1      
+  39. seq35     
+  40. seq84     
+  41. seq55     
+  42. seq86     
+  43. seq70     
+  44. seq40     
+  45. seq82     
+  46. seq69     
+  47. seq8      
+  48. seq10     
+  49. seq66     
+  50. seq92     
+  51. seq4      
+  52. seq19     
+  53. seq91     
+  54. seq96     
+  55. seq106    
+  56. seq59     
+  57. seq18     
+  58. seq104    
+  59. seq44     
+  60. seq15     
+  61. seq58     
+  62. seq49     
+  63. seq47     
+  64. seq14     
+  65. seq90     
+  66. seq6      
+  67. seq62     
+  68. seq97     
+  69. seq3      
+  70. seq78     
+  71. seq38     
+  72. seq68     
+  73. seq102    
+  74. seq85     
+  75. seq22     
+  76. seq42     
+  77. seq100    
+  78. seq57     
+  79. seq95     
+  80. seq77     
+  81. seq23     
+  82. seq52     
+  83. seq88     
+  84. seq83     
+  85. seq61     
+  86. seq34     
+  87. seq25     
+  88. seq43     
+  89. seq29     
+  90. seq93     
+  91. seq26     
+  92. seq81     
+  93. seq51     
+  94. seq7      
+  95. seq80     
+  96. seq74     
+  97. seq60     
+  98. seq20     
+  99. seq89     
+ 100. seq36     
+ 101. seq75     
+ 102. seq64     
+ 103. seq11     
+ 104. seq67     
+ 105. seq103    
+ 106. seq24     
+ 107. seq13     
+
+Doing global rearrangements on the first of the trees tied for best
+  !-----------------------------------------------------------------------!
+   .......................................................................
+   .......................................................................
+
+Adding species:
+   1. seq17     
+   2. seq20     
+   3. seq85     
+   4. seq99     
+   5. seq91     
+   6. seq89     
+   7. seq48     
+   8. seq86     
+   9. seq45     
+  10. seq50     
+  11. seq73     
+  12. seq67     
+  13. seq4      
+  14. seq44     
+  15. seq93     
+  16. seq38     
+  17. seq30     
+  18. seq104    
+  19. seq8      
+  20. seq69     
+  21. seq25     
+  22. seq105    
+  23. seq62     
+  24. seq72     
+  25. seq90     
+  26. seq64     
+  27. seq40     
+  28. seq1      
+  29. seq94     
+  30. seq54     
+  31. seq77     
+  32. seq29     
+  33. seq16     
+  34. seq13     
+  35. seq33     
+  36. seq19     
+  37. seq96     
+  38. seq75     
+  39. seq32     
+  40. seq11     
+  41. seq78     
+  42. seq21     
+  43. seq49     
+  44. seq59     
+  45. seq66     
+  46. seq12     
+  47. seq39     
+  48. seq9      
+  49. seq84     
+  50. seq81     
+  51. seq37     
+  52. seq70     
+  53. seq18     
+  54. seq22     
+  55. seq43     
+  56. seq27     
+  57. seq24     
+  58. seq60     
+  59. seq57     
+  60. seq101    
+  61. seq10     
+  62. seq95     
+  63. seq51     
+  64. seq15     
+  65. seq58     
+  66. seq80     
+  67. seq83     
+  68. seq106    
+  69. seq31     
+  70. seq98     
+  71. seq68     
+  72. seq7      
+  73. seq102    
+  74. seq79     
+  75. GL        
+  76. seq56     
+  77. seq35     
+  78. seq23     
+  79. seq55     
+  80. seq41     
+  81. seq71     
+  82. seq103    
+  83. seq3      
+  84. seq2      
+  85. seq46     
+  86. seq92     
+  87. seq97     
+  88. seq28     
+  89. seq76     
+  90. seq100    
+  91. seq88     
+  92. seq14     
+  93. seq82     
+  94. seq74     
+  95. seq34     
+  96. seq61     
+  97. seq53     
+  98. seq5      
+  99. seq6      
+ 100. seq26     
+ 101. seq52     
+ 102. seq47     
+ 103. seq65     
+ 104. seq87     
+ 105. seq63     
+ 106. seq36     
+ 107. seq42     
+
+Doing global rearrangements on the first of the trees tied for best
+  !-----------------------------------------------------------------------!
+   .......................................................................
+   .......................................................................
+
+Adding species:
+   1. seq14     
+   2. seq63     
+   3. seq2      
+   4. seq52     
+   5. seq81     
+   6. seq91     
+   7. seq35     
+   8. seq48     
+   9. seq16     
+  10. seq43     
+  11. seq78     
+  12. seq94     
+  13. seq67     
+  14. seq100    
+  15. seq71     
+  16. seq85     
+  17. seq50     
+  18. seq99     
+  19. seq26     
+  20. seq101    
+  21. seq13     
+  22. seq69     
+  23. seq36     
+  24. seq59     
+  25. seq49     
+  26. seq105    
+  27. seq51     
+  28. seq83     
+  29. seq76     
+  30. seq29     
+  31. seq24     
+  32. seq1      
+  33. seq22     
+  34. seq97     
+  35. seq40     
+  36. seq8      
+  37. seq41     
+  38. seq93     
+  39. seq82     
+  40. seq77     
+  41. seq12     
+  42. seq72     
+  43. seq79     
+  44. seq90     
+  45. seq6      
+  46. seq30     
+  47. seq47     
+  48. seq60     
+  49. seq86     
+  50. seq95     
+  51. seq27     
+  52. seq45     
+  53. seq37     
+  54. seq42     
+  55. seq5      
+  56. seq9      
+  57. seq106    
+  58. seq34     
+  59. seq84     
+  60. seq15     
+  61. seq80     
+  62. seq66     
+  63. seq4      
+  64. seq64     
+  65. seq65     
+  66. seq32     
+  67. seq98     
+  68. seq89     
+  69. seq10     
+  70. seq92     
+  71. seq56     
+  72. seq7      
+  73. seq62     
+  74. seq17     
+  75. seq104    
+  76. seq38     
+  77. seq55     
+  78. seq73     
+  79. GL        
+  80. seq46     
+  81. seq87     
+  82. seq18     
+  83. seq54     
+  84. seq44     
+  85. seq39     
+  86. seq25     
+  87. seq103    
+  88. seq102    
+  89. seq20     
+  90. seq23     
+  91. seq53     
+  92. seq58     
+  93. seq75     
+  94. seq31     
+  95. seq74     
+  96. seq28     
+  97. seq3      
+  98. seq11     
+  99. seq19     
+ 100. seq70     
+ 101. seq96     
+ 102. seq68     
+ 103. seq21     
+ 104. seq57     
+ 105. seq33     
+ 106. seq88     
+ 107. seq61     
+
+Doing global rearrangements on the first of the trees tied for best
+  !-----------------------------------------------------------------------!
+   .......................................................................
+   .......................................................................
+
+Adding species:
+   1. seq99     
+   2. seq85     
+   3. seq9      
+   4. seq23     
+   5. seq74     
+   6. seq11     
+   7. seq30     
+   8. seq80     
+   9. seq55     
+  10. seq35     
+  11. seq17     
+  12. seq13     
+  13. seq20     
+  14. seq40     
+  15. seq25     
+  16. seq2      
+  17. GL        
+  18. seq105    
+  19. seq69     
+  20. seq90     
+  21. seq29     
+  22. seq94     
+  23. seq97     
+  24. seq59     
+  25. seq102    
+  26. seq56     
+  27. seq103    
+  28. seq7      
+  29. seq14     
+  30. seq82     
+  31. seq91     
+  32. seq71     
+  33. seq75     
+  34. seq84     
+  35. seq58     
+  36. seq36     
+  37. seq67     
+  38. seq51     
+  39. seq21     
+  40. seq86     
+  41. seq28     
+  42. seq6      
+  43. seq87     
+  44. seq8      
+  45. seq42     
+  46. seq81     
+  47. seq15     
+  48. seq79     
+  49. seq22     
+  50. seq100    
+  51. seq92     
+  52. seq41     
+  53. seq89     
+  54. seq27     
+  55. seq34     
+  56. seq78     
+  57. seq10     
+  58. seq39     
+  59. seq62     
+  60. seq33     
+  61. seq101    
+  62. seq1      
+  63. seq104    
+  64. seq93     
+  65. seq18     
+  66. seq26     
+  67. seq95     
+  68. seq12     
+  69. seq72     
+  70. seq32     
+  71. seq76     
+  72. seq61     
+  73. seq63     
+  74. seq19     
+  75. seq77     
+  76. seq73     
+  77. seq48     
+  78. seq16     
+  79. seq46     
+  80. seq66     
+  81. seq37     
+  82. seq47     
+  83. seq45     
+  84. seq70     
+  85. seq64     
+  86. seq106    
+  87. seq44     
+  88. seq88     
+  89. seq53     
+  90. seq96     
+  91. seq50     
+  92. seq68     
+  93. seq43     
+  94. seq57     
+  95. seq60     
+  96. seq5      
+  97. seq52     
+  98. seq38     
+  99. seq98     
+ 100. seq54     
+ 101. seq4      
+ 102. seq65     
+ 103. seq83     
+ 104. seq49     
+ 105. seq24     
+ 106. seq31     
+ 107. seq3      
+
+Doing global rearrangements on the first of the trees tied for best
+  !-----------------------------------------------------------------------!
+   .......................................................................
+   .......................................................................
+
+Adding species:
+   1. seq12     
+   2. seq67     
+   3. seq90     
+   4. seq80     
+   5. seq63     
+   6. seq50     
+   7. seq79     
+   8. seq1      
+   9. seq66     
+  10. seq94     
+  11. seq10     
+  12. seq15     
+  13. seq27     
+  14. seq92     
+  15. seq6      
+  16. seq43     
+  17. seq33     
+  18. seq62     
+  19. seq51     
+  20. seq22     
+  21. seq14     
+  22. seq93     
+  23. seq47     
+  24. seq88     
+  25. seq70     
+  26. seq57     
+  27. seq84     
+  28. seq59     
+  29. seq39     
+  30. seq105    
+  31. seq11     
+  32. seq83     
+  33. seq71     
+  34. seq17     
+  35. seq44     
+  36. seq54     
+  37. seq99     
+  38. seq58     
+  39. seq18     
+  40. seq26     
+  41. seq89     
+  42. seq98     
+  43. seq77     
+  44. seq46     
+  45. seq9      
+  46. seq74     
+  47. seq42     
+  48. seq48     
+  49. seq61     
+  50. seq73     
+  51. seq4      
+  52. seq28     
+  53. seq96     
+  54. seq76     
+  55. seq25     
+  56. seq16     
+  57. seq5      
+  58. seq20     
+  59. seq7      
+  60. seq24     
+  61. seq106    
+  62. seq8      
+  63. seq68     
+  64. seq75     
+  65. seq45     
+  66. seq103    
+  67. seq81     
+  68. seq53     
+  69. seq23     
+  70. seq30     
+  71. seq65     
+  72. seq21     
+  73. seq13     
+  74. seq104    
+  75. GL        
+  76. seq40     
+  77. seq34     
+  78. seq29     
+  79. seq86     
+  80. seq78     
+  81. seq100    
+  82. seq102    
+  83. seq64     
+  84. seq52     
+  85. seq37     
+  86. seq95     
+  87. seq60     
+  88. seq35     
+  89. seq32     
+  90. seq19     
+  91. seq55     
+  92. seq101    
+  93. seq97     
+  94. seq85     
+  95. seq49     
+  96. seq82     
+  97. seq56     
+  98. seq91     
+  99. seq87     
+ 100. seq3      
+ 101. seq36     
+ 102. seq72     
+ 103. seq2      
+ 104. seq41     
+ 105. seq31     
+ 106. seq69     
+ 107. seq38     
+
+Doing global rearrangements on the first of the trees tied for best
+  !-----------------------------------------------------------------------!
+   .......................................................................
+   .......................................................................
+
+Adding species:
+   1. seq72     
+   2. seq87     
+   3. seq30     
+   4. seq36     
+   5. seq101    
+   6. seq63     
+   7. seq51     
+   8. seq70     
+   9. seq41     
+  10. seq38     
+  11. seq78     
+  12. seq24     
+  13. seq83     
+  14. seq26     
+  15. seq21     
+  16. seq6      
+  17. seq56     
+  18. seq42     
+  19. seq48     
+  20. seq15     
+  21. seq85     
+  22. seq100    
+  23. seq47     
+  24. seq31     
+  25. seq68     
+  26. seq95     
+  27. seq58     
+  28. seq49     
+  29. seq52     
+  30. seq8      
+  31. seq9      
+  32. seq25     
+  33. seq12     
+  34. seq13     
+  35. seq11     
+  36. seq18     
+  37. seq62     
+  38. seq1      
+  39. seq104    
+  40. seq10     
+  41. GL        
+  42. seq77     
+  43. seq67     
+  44. seq54     
+  45. seq37     
+  46. seq84     
+  47. seq102    
+  48. seq16     
+  49. seq71     
+  50. seq40     
+  51. seq4      
+  52. seq82     
+  53. seq89     
+  54. seq99     
+  55. seq76     
+  56. seq73     
+  57. seq39     
+  58. seq55     
+  59. seq2      
+  60. seq34     
+  61. seq23     
+  62. seq29     
+  63. seq14     
+  64. seq53     
+  65. seq50     
+  66. seq20     
+  67. seq59     
+  68. seq90     
+  69. seq57     
+  70. seq65     
+  71. seq43     
+  72. seq69     
+  73. seq19     
+  74. seq3      
+  75. seq45     
+  76. seq74     
+  77. seq75     
+  78. seq105    
+  79. seq92     
+  80. seq17     
+  81. seq64     
+  82. seq86     
+  83. seq98     
+  84. seq97     
+  85. seq79     
+  86. seq22     
+  87. seq106    
+  88. seq44     
+  89. seq61     
+  90. seq27     
+  91. seq103    
+  92. seq28     
+  93. seq35     
+  94. seq5      
+  95. seq7      
+  96. seq81     
+  97. seq96     
+  98. seq80     
+  99. seq66     
+ 100. seq91     
+ 101. seq88     
+ 102. seq94     
+ 103. seq32     
+ 104. seq33     
+ 105. seq46     
+ 106. seq93     
+ 107. seq60     
+
+Doing global rearrangements on the first of the trees tied for best
+  !-----------------------------------------------------------------------!
+   .......................................................................
+   .......................................................................
+
+Adding species:
+   1. seq28     
+   2. seq94     
+   3. seq58     
+   4. seq95     
+   5. seq64     
+   6. seq12     
+   7. seq54     
+   8. seq51     
+   9. seq20     
+  10. seq91     
+  11. seq23     
+  12. seq89     
+  13. seq82     
+  14. seq34     
+  15. seq7      
+  16. seq37     
+  17. seq33     
+  18. seq66     
+  19. seq92     
+  20. seq50     
+  21. seq55     
+  22. seq96     
+  23. seq2      
+  24. seq32     
+  25. seq4      
+  26. seq39     
+  27. seq3      
+  28. seq62     
+  29. seq103    
+  30. seq53     
+  31. seq93     
+  32. seq11     
+  33. seq27     
+  34. seq36     
+  35. seq16     
+  36. seq9      
+  37. seq78     
+  38. seq83     
+  39. seq68     
+  40. seq14     
+  41. seq59     
+  42. seq10     
+  43. seq70     
+  44. seq75     
+  45. seq102    
+  46. seq60     
+  47. seq61     
+  48. seq1      
+  49. seq17     
+  50. seq31     
+  51. seq45     
+  52. seq18     
+  53. seq19     
+  54. seq57     
+  55. seq41     
+  56. seq47     
+  57. seq21     
+  58. seq42     
+  59. seq29     
+  60. GL        
+  61. seq43     
+  62. seq73     
+  63. seq97     
+  64. seq65     
+  65. seq98     
+  66. seq24     
+  67. seq26     
+  68. seq13     
+  69. seq71     
+  70. seq69     
+  71. seq8      
+  72. seq67     
+  73. seq79     
+  74. seq56     
+  75. seq81     
+  76. seq106    
+  77. seq25     
+  78. seq100    
+  79. seq38     
+  80. seq77     
+  81. seq40     
+  82. seq101    
+  83. seq74     
+  84. seq6      
+  85. seq104    
+  86. seq76     
+  87. seq46     
+  88. seq5      
+  89. seq84     
+  90. seq52     
+  91. seq49     
+  92. seq86     
+  93. seq48     
+  94. seq30     
+  95. seq99     
+  96. seq15     
+  97. seq35     
+  98. seq85     
+  99. seq44     
+ 100. seq63     
+ 101. seq72     
+ 102. seq90     
+ 103. seq105    
+ 104. seq87     
+ 105. seq88     
+ 106. seq22     
+ 107. seq80     
+
+Doing global rearrangements on the first of the trees tied for best
+  !-----------------------------------------------------------------------!
+   .......................................................................
+   .......................................................................
+
+Adding species:
+   1. seq71     
+   2. seq92     
+   3. seq17     
+   4. seq103    
+   5. seq66     
+   6. seq9      
+   7. seq10     
+   8. seq84     
+   9. seq11     
+  10. seq81     
+  11. seq106    
+  12. seq88     
+  13. seq62     
+  14. seq86     
+  15. seq36     
+  16. seq19     
+  17. seq32     
+  18. seq73     
+  19. seq7      
+  20. seq12     
+  21. seq72     
+  22. seq8      
+  23. seq3      
+  24. seq34     
+  25. seq16     
+  26. seq83     
+  27. seq4      
+  28. seq99     
+  29. seq28     
+  30. seq37     
+  31. seq48     
+  32. seq56     
+  33. seq13     
+  34. seq20     
+  35. seq21     
+  36. seq15     
+  37. seq52     
+  38. seq33     
+  39. seq22     
+  40. seq90     
+  41. seq49     
+  42. seq27     
+  43. seq95     
+  44. seq54     
+  45. seq47     
+  46. seq39     
+  47. seq46     
+  48. seq100    
+  49. seq53     
+  50. GL        
+  51. seq82     
+  52. seq77     
+  53. seq57     
+  54. seq1      
+  55. seq61     
+  56. seq79     
+  57. seq18     
+  58. seq55     
+  59. seq64     
+  60. seq51     
+  61. seq41     
+  62. seq59     
+  63. seq29     
+  64. seq69     
+  65. seq74     
+  66. seq25     
+  67. seq76     
+  68. seq43     
+  69. seq89     
+  70. seq101    
+  71. seq58     
+  72. seq96     
+  73. seq98     
+  74. seq85     
+  75. seq40     
+  76. seq91     
+  77. seq26     
+  78. seq65     
+  79. seq94     
+  80. seq45     
+  81. seq93     
+  82. seq14     
+  83. seq30     
+  84. seq68     
+  85. seq6      
+  86. seq67     
+  87. seq87     
+  88. seq60     
+  89. seq38     
+  90. seq75     
+  91. seq105    
+  92. seq102    
+  93. seq97     
+  94. seq42     
+  95. seq23     
+  96. seq70     
+  97. seq63     
+  98. seq31     
+  99. seq2      
+ 100. seq50     
+ 101. seq35     
+ 102. seq78     
+ 103. seq24     
+ 104. seq5      
+ 105. seq80     
+ 106. seq44     
+ 107. seq104    
+
+Doing global rearrangements on the first of the trees tied for best
+  !-----------------------------------------------------------------------!
+   .......................................................................
+   .......................................................................
+
+Adding species:
+   1. seq68     
+   2. seq41     
+   3. seq43     
+   4. seq9      
+   5. seq90     
+   6. seq32     
+   7. seq97     
+   8. seq44     
+   9. seq61     
+  10. seq48     
+  11. seq88     
+  12. seq98     
+  13. seq49     
+  14. seq12     
+  15. seq5      
+  16. seq85     
+  17. seq7      
+  18. seq84     
+  19. seq51     
+  20. seq14     
+  21. seq40     
+  22. seq15     
+  23. seq54     
+  24. seq2      
+  25. seq80     
+  26. seq39     
+  27. seq4      
+  28. seq75     
+  29. seq31     
+  30. seq67     
+  31. seq102    
+  32. seq50     
+  33. seq74     
+  34. seq47     
+  35. seq93     
+  36. seq95     
+  37. seq16     
+  38. seq11     
+  39. seq66     
+  40. seq24     
+  41. seq82     
+  42. seq103    
+  43. seq87     
+  44. seq53     
+  45. seq30     
+  46. seq3      
+  47. seq10     
+  48. seq65     
+  49. seq18     
+  50. seq60     
+  51. seq70     
+  52. seq21     
+  53. seq101    
+  54. seq57     
+  55. seq33     
+  56. seq22     
+  57. seq23     
+  58. seq83     
+  59. seq46     
+  60. seq19     
+  61. seq81     
+  62. seq36     
+  63. seq99     
+  64. seq8      
+  65. seq89     
+  66. seq45     
+  67. seq37     
+  68. seq63     
+  69. seq78     
+  70. seq86     
+  71. seq42     
+  72. seq55     
+  73. seq56     
+  74. seq29     
+  75. seq25     
+  76. seq52     
+  77. seq58     
+  78. seq77     
+  79. seq59     
+  80. seq17     
+  81. seq69     
+  82. seq72     
+  83. seq28     
+  84. seq79     
+  85. seq106    
+  86. seq96     
+  87. seq20     
+  88. seq38     
+  89. seq34     
+  90. seq104    
+  91. seq62     
+  92. GL        
+  93. seq26     
+  94. seq13     
+  95. seq1      
+  96. seq64     
+  97. seq73     
+  98. seq27     
+  99. seq92     
+ 100. seq76     
+ 101. seq94     
+ 102. seq100    
+ 103. seq6      
+ 104. seq35     
+ 105. seq105    
+ 106. seq71     
+ 107. seq91     
+
+Doing global rearrangements on the first of the trees tied for best
+  !-----------------------------------------------------------------------!
+   .......................................................................
+   .......................................................................
+
+Collapsing best trees
+   ......................
+
+Output written to file "outfile"
+
+Trees also written onto file "outtree"
+
+Done.
+
