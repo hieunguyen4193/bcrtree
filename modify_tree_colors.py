@@ -160,5 +160,6 @@ def main(args):
     # Save the final image
     plt.savefig(os.path.join(outputdir, "{}.withLegend.svg".format(svg_name)), bbox_inches='tight', pad_inches=0.1, dpi=300, format="svg")
     plt.show()
+    
 if __name__ == '__main__':
     main(get_parser(sys.argv[1:]))
