@@ -60,7 +60,7 @@ def get_parser(argv):
         ),
     )
     parser.add_argument(
-        "--frame", type=int, default=None, help="codon frame", choices=(1, 2, 3)
+        "--frame", type=int, default=None, help="codon frame", choices=(0, 1, 2, 3)
     )
     parser.add_argument(
         "--output", type=str, default=".", help="path to folder storing output"
@@ -82,7 +82,7 @@ def parse_sequence_file(aln_file, root, frame = None, id_abundances = False):
     aln = AlignIO.read(aln_file, aln_format)
     
     sequence_length = aln.get_alignment_length()
-    if frame is not None:
+    if frame != 0:
         start = frame - 1
         end = start + 3 * ((sequence_length - start) // 3)
     else:
