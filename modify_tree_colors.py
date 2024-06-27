@@ -92,7 +92,7 @@ def main(args):
 
     # fix color list, MID color.
     avai_mids = seqdf_orig.MID.unique()
-    mid_color_pal = pd.read_csv(color_path, index_col = [0]).to_dict()["mid_color_pal"]
+    mid_color_pal = pd.read_csv(color_path, index_col = [0]).to_dict()["hex color"]
 
     # assert(seqdf.shape[0] == idmapseqdf.shape[0])
     # assert(len([item for item in seqdf.seq.values if item in idmapseqdf.seq.values]) == idmapseqdf.shape[0])

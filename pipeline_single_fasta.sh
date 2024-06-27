@@ -16,7 +16,7 @@ mkdir -p ${outputdir};
 orig_fasta=${input_fasta}
 deduplicate_src="/home/hieu/src/BCRTree_release/gctree/deduplicated.py";
 modify_tree_colors="/home/hieu/src/BCRTree_release/gctree/modify_tree_colors.py";
-color_path="/home/hieu/outdir/mixcr_pipeline_output/data_analysis/01_output/mid_color_pal.csv";
+color_path="/home/hieu/src/BCRTree_release/gctree/hex_color.csv";
 
 filename=$(echo $input_fasta | xargs -n 1 basename);
 filename=${filename%.aln.fasta*}
