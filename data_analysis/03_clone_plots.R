@@ -33,12 +33,13 @@ library(circlize)
 library(ggalluvial)
 outdir <- "/home/hieu/outdir"
 PROJECT <- "mixcr_pipeline_output"
+thres <- 0.15
 
 path.to.main.input <- file.path(outdir, PROJECT)
 path.to.main.output <- file.path(outdir, PROJECT, "data_analysis")
 path.to.01.output <- file.path(path.to.main.output, "01_output")
-path.to.02.output <- file.path(path.to.main.output, "02_output")
-path.to.03.output <- file.path(path.to.main.output, "03_output")
+path.to.02.output <- file.path(path.to.main.output, "02_output", sprintf("CDR3_%s", thres))
+path.to.03.output <- file.path(path.to.main.output, "03_output", sprintf("CDR3_%s", thres))
 dir.create(path.to.03.output, showWarnings = FALSE, recursive = TRUE)
 
 path.to.mid.metadata <- file.path(outdir, "FT_output", "mid_labels.csv")
@@ -49,13 +50,13 @@ for (mouse.id in unique(mid.metadata$mouse)){
   print(sprintf("Working on mouse %s", mouse.id))
   all.mids <- subset(mid.metadata, mid.metadata$mouse == mouse.id)$X %>% unique()
   clonedf <- readxl::read_excel(file.path(path.to.02.output, sprintf("clones_%s.xlsx", mouse.id)))
-  clonesetsdf <- readxl::read_excel(file.path(path.to.02.output, sprintf("clonesets_%s.xlsx", mouse.id)))
+  clonesetsdf <- readxl::read_excel(file.path(path.to.02.output, sprintf("clonesets_%s.split_clones_%s.xlsx", mouse.id, thres)))
   
   ##### NEED FIX!
   #> 27.06.2024: currently using the combination of V and J gene and length of CDR3 
   #> AA as CloneID, this hasn't taken into account the similarity/difference between
-  #> CDR3 sequences. 
-  clonesetsdf$CloneID <- clonesetsdf$VJ.len.combi
+  #> CDR3 sequences. ---> DONE
+  clonesetsdf$CloneID <- clonesetsdf[[sprintf("VJcombi_CDR3_%s", thres)]]
   all.clones <- unique(clonesetsdf$CloneID)
   #####----------------------------------------------------------------------#####
   ##### bar plot: number of occurrences for each gene usage in each MID

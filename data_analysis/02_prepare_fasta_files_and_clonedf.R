@@ -26,14 +26,18 @@ library(ggtree)
 library(ggrepel)
 library(data.table)
 library(ggtree)
+library(ape)
+library(igraph)
 
 outdir <- "/home/hieu/outdir"
 PROJECT <- "mixcr_pipeline_output"
+##### AA sequence similarity threshold
+thres <- 0.15
 
 path.to.main.input <- file.path(outdir, PROJECT)
 path.to.main.output <- file.path(outdir, PROJECT, "data_analysis")
 path.to.01.output <- file.path(path.to.main.output, "01_output")
-path.to.02.output <- file.path(path.to.main.output, "02_output")
+path.to.02.output <- file.path(path.to.main.output, "02_output", sprintf("CDR3_%s", thres))
 dir.create(path.to.02.output, showWarnings = FALSE, recursive = TRUE)
 
 path.to.mouse.output <- file.path(path.to.main.input, "mouse_based_output")
@@ -84,6 +88,33 @@ for (mouse.id in unique(mid.metadata$mouse)){
     mutate(VJ.combi = sprintf("%s_%s", V.gene, J.gene)) %>%
     mutate(VJ.len.combi = sprintf("%s_%s_%s", V.gene, J.gene,  nchar(nSeqCDR3)))
   writexl::write_xlsx(clonesets, file.path(path.to.02.output, sprintf("clonesets_%s.xlsx", mouse.id)))
+  
+  #####---------------------------------------------------------------------#####
+  ##### Group AA sequences to group based on 85% similarity
+  #####---------------------------------------------------------------------#####    
+  clonesetsdf <- readxl::read_excel(file.path(path.to.02.output, sprintf("clonesets_%s.xlsx", mouse.id)))
+  new.clonesetsdf <- data.frame()
+  
+  for (input.VJ.combi in unique(clonesetsdf$VJ.len.combi)){
+    tmpdf <- subset(clonesetsdf, clonesetsdf$VJ.len.combi == input.VJ.combi)
+    seqs <- unique(tmpdf$aaSeqCDR3)
+    if (length(seqs) >= 2){
+      cluster.output <- assign_clusters_to_sequences(seqs, threshold = thres)$res
+      tmpdf[[sprintf("VJcombi_CDR3_%s", thres)]] <- unlist(lapply(
+        tmpdf$aaSeqCDR3, function(x){
+          return(sprintf("%s_%s", input.VJ.combi, subset(cluster.output, cluster.output$seq == x)$cluster))
+        }
+      ))    
+    } else {
+      tmpdf[[sprintf("VJcombi_CDR3_%s", thres)]] <- sprintf("%s_1", input.VJ.combi)
+    }
+    
+    new.clonesetsdf <- rbind(new.clonesetsdf, tmpdf)
+  }
+  writexl::write_xlsx(new.clonesetsdf, file.path(path.to.02.output, sprintf("clonesets_%s.split_clones_%s.xlsx", mouse.id, thres)))
+  
+  # replace the clonesets by new.clonesets for downstream analysis
+  clonesets <- new.clonesetsdf
   #####---------------------------------------------------------------------#####
   ##### Generate summary table for clones, not for the fasta files
   #####---------------------------------------------------------------------#####
@@ -111,15 +142,14 @@ for (mouse.id in unique(mid.metadata$mouse)){
   #####---------------------------------------------------------------------#####
   ##### generate fasta file for input to other tree generation tools
   #####---------------------------------------------------------------------#####
-  for (input.VJ.combi in unique(clonesets$VJ.len.combi)){
-  # input.VJ.combi <- "IGHV3-6*01_IGHJ2*01_42"
+  for (input.VJ.combi in unique(clonesets[[sprintf("VJcombi_CDR3_%s", thres)]])){
   V.gene <- str_split(input.VJ.combi, "_")[[1]][[1]]
   J.gene <- str_split(input.VJ.combi, "_")[[1]][[2]]
   CDR3.length <- as.numeric(str_split(input.VJ.combi, "_")[[1]][[3]])
   
     path.to.output.fasta <- file.path(path.to.02.output, mouse.id, sprintf("%s_%s.aln.fasta", mouse.id, input.VJ.combi))
     if (file.exists(path.to.output.fasta) == FALSE){
-      fasta.output <- subset(clonesets, clonesets$VJ.len.combi == input.VJ.combi)[, c("targetSequences", "uniqueMoleculeCount", "V.gene", "D.gene", "J.gene", "id", "aaSeqCDR3", "nSeqCDR3")]
+      fasta.output <- subset(clonesets, clonesets[[sprintf("VJcombi_CDR3_%s", thres)]] == input.VJ.combi)[, c("targetSequences", "uniqueMoleculeCount", "V.gene", "D.gene", "J.gene", "id", "aaSeqCDR3", "nSeqCDR3")]
       colnames(fasta.output) <- c("seq", "abundance", "V.gene", "D.gene", "J.gene", "SampleID", "CDR3aa", "CDR3nt")
       
       ##### get germline sequences and merge with the real data sequences
