@@ -1,7 +1,7 @@
 gc()
 rm(list = ls())
 
-path.to.project.src <- "/home/hieu/src/BCRTree_release/data_analysis"
+path.to.project.src <- "/home/hieu/src/BCRTree_release/gctree/data_analysis"
 source(file.path(path.to.project.src, "import_libraries.R"))
 source(file.path(path.to.project.src, "helper_functions.R"))
 
@@ -83,7 +83,7 @@ for (mouse.id in unique(mid.metadata$mouse)){
     mutate(VJseq.combi = sprintf("%s_%s_%s_%s", V.gene, J.gene, aaSeqCDR3, nSeqCDR3)) %>%
     mutate(VJ.combi = sprintf("%s_%s", V.gene, J.gene)) %>%
     mutate(VJ.len.combi = sprintf("%s_%s_%s", V.gene, J.gene,  nchar(nSeqCDR3)))
-
+  writexl::write_xlsx(clonesets, file.path(path.to.02.output, sprintf("clonesets_%s.xlsx", mouse.id)))
   #####---------------------------------------------------------------------#####
   ##### Generate summary table for clones, not for the fasta files
   #####---------------------------------------------------------------------#####

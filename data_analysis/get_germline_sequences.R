@@ -6,7 +6,7 @@
   
 library("Biostrings")
 library(stringr)
-path.to.fasta <- "/home/hieu/src/BCRTree_release/data_analysis"
+path.to.fasta <- "/home/hieu/src/BCRTree_release/gctree/data_analysis"
 
 s.V.genes <- readDNAStringSet(file.path(path.to.fasta, "IGHV.fasta")) 
 names(s.V.genes) <- lapply(names(s.V.genes), function(x){
