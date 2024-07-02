@@ -10,7 +10,13 @@ pipeline_outputdir="/home/hieu/outdir/gctree_output";
 
 for f in ${all_fasta};do \
 mouseID=$(echo $f | cut -d'_' -f1);
+OUTPUT_FILE=${pipeline_outputdir}/${mouseID}/${f%.aln.fasta*}/${f%.aln.fasta*}.color.withLegend.svg;
+echo $OUTPUT_FILE
+if [ -f "$OUTPUT_FILE" ]; then
+echo $OUTPUT_FILE exists;
+else
 mkdir -p ${pipeline_outputdir}/${mouseID};
 echo -e "Working on mouse " $mouseID "and sample " $f;
 bash pipeline_single_fasta.sh ${mixcrdir}/${mouseID}/${f} ${pipeline_outputdir}/${mouseID};
+fi;
 done

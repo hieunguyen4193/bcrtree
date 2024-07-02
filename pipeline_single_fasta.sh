@@ -55,6 +55,7 @@ mv outfile ${outputdir}/${filename}/outfile
 mv outtree ${outputdir}/${filename}/outtree
 mv gctree.out.* ${outputdir}/${filename}
 
+echo -e "Modify tree colors..."
 python ${modify_tree_colors} \
 --input_fasta ${orig_fasta} \
 --input_idmap ${outputdir}/${filename}/${filename}.id_map_seq.csv \
@@ -62,3 +63,5 @@ python ${modify_tree_colors} \
 --color_path ${color_path} \
 --output ${outputdir}/${filename} \
 --svg_name ${filename}.color
+
+echo -e "Finished"
