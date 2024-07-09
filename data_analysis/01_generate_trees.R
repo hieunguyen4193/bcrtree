@@ -1,7 +1,7 @@
 gc()
 rm(list = ls())
 
-path.to.project.src <- "/home/hieu/src/BCRTree_release/data_analysis"
+path.to.project.src <- "/home/hieu/src/BCRTree_release/gctree/data_analysis"
 source(file.path(path.to.project.src, "import_libraries.R"))
 source(file.path(path.to.project.src, "helper_functions.R"))
 
@@ -95,7 +95,7 @@ write.csv(data.frame(mouse_color_pal), file.path(path.to.01.output, "mouse_color
 
 for (mouse.id in names(all.tree.tsv.files)){
 # for (mouse.id in c("m11")){
-  if (file.exists(file.path(path.to.01.output, sprintf("finished_saving_mouse_ID_%s.20240625.csv", mouse.id))) == FALSE){
+  if (file.exists(file.path(path.to.01.output, sprintf("finished_saving_mouse_ID_%s.20240702.csv", mouse.id))) == FALSE){
     path.to.mouse <- file.path(path.to.mouse.output, sprintf("MID_list_%s", mouse.id))
     all.mids <- subset(mid.metadata, mid.metadata$mouse == mouse.id)$X
     
@@ -158,7 +158,7 @@ for (mouse.id in names(all.tree.tsv.files)){
     dir.create(file.path(path.to.01.output, "color_by_AASeqCDR3", mouse.id), showWarnings = FALSE, recursive = TRUE)
     dir.create(file.path(path.to.01.output, "color_by_ID", mouse.id), showWarnings = FALSE, recursive = TRUE)
     dir.create(file.path(path.to.01.output, "color_by_YFP", mouse.id), showWarnings = FALSE, recursive = TRUE)
-    
+    dir.create(file.path(path.to.01.output, "color_by_YFP_noLabel", mouse.id), showWarnings = FALSE, recursive = TRUE)
     all.trees <- setdiff(unique(lng_db$treeId), excluded.trees[[mouse.id]])
     save.plot.list <- list()
     for (treeID in all.trees){
@@ -203,6 +203,17 @@ for (mouse.id in names(all.tree.tsv.files)){
             ggsave(plot = g.label1, filename = sprintf("tree_%s.svg", treeID), path = file.path(path.to.01.output, "color_by_YFP", mouse.id), device = "svg", width = 14, height = 10, dpi = 300)
           }
           
+          if (file.exists(file.path(path.to.01.output, "color_by_YFP_noLabel", mouse.id, sprintf("tree_%s.svg", treeID))) == FALSE){
+            g.label1 <- ggtree(tree) %<+% tree_meta +
+              geom_tippoint(aes(color = label1 , size=uniqueMoleculeCount))+
+              theme(legend.position = 'bottom')+
+              scale_size_continuous(range = c(2, 7)) + 
+              ggplot2:::manual_scale(
+                'color', 
+                values = setNames(my_color_palette1, names(my_color_palette1)))
+            ggsave(plot = g.label1, filename = sprintf("tree_%s.svg", treeID), path = file.path(path.to.01.output, "color_by_YFP_noLabel", mouse.id), device = "svg", width = 14, height = 10, dpi = 300)
+          }
+          
           if (file.exists(file.path(path.to.01.output, "color_by_AASeqCDR3", mouse.id, sprintf("tree_%s.svg", treeID))) == FALSE){
             g.AAseq <- ggtree(tree) %<+% tree_meta +
               geom_text(aes(label=timepoint), hjust=-.5,size=4)+
@@ -216,6 +227,6 @@ for (mouse.id in names(all.tree.tsv.files)){
         }
       )
     }
-    write.csv(data.frame(status = c(sprintf("finished_ID_%s", mouse.id))), file.path(path.to.01.output, sprintf("finished_saving_mouse_ID_%s.20240625.csv", mouse.id)))
+    write.csv(data.frame(status = c(sprintf("finished_ID_%s", mouse.id))), file.path(path.to.01.output, sprintf("finished_saving_mouse_ID_%s.20240702.csv", mouse.id)))
   }
 }

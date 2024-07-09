@@ -12,3 +12,5 @@ RUN conda install -c bioconda phylip
 COPY . /gctree
 WORKDIR /gctree
 CMD . tests/test.sh
+RUN apt-get install curl -y
+RUN curl -s https://get.nextflow.io | bash && chmod +x nextflow && mv nextflow /usr/local/bin 
