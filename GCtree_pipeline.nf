@@ -1,35 +1,121 @@
 nextflow.enable.dsl=1
 
-process DeduplicateAndPrepare {
-    tag "${fasta.baseName}"
+// path to fetch fasta file as inputs
+params.input=""
+
+// path to save output all output files
+params.output=""
+
+// path to the python source use in deduplicating the sequences.
+deduplicate_src=file(params.deduplicate_src)
+modify_tree_colors=file(params.modify_tree_colors)
+color_path=file(params.color_path)
+
+// Create a channel that emits files from the specified input directory
+Channel
+    .fromPath("${params.input}/*.fasta")
+    .map { file ->
+        def sample_id = file.baseName.replace(".aln.fasta", "") // Assuming "aln" is part of the base name to remove
+        return [sample_id, file] // Return a tuple of sampleID and the file object
+    }
+    .set { fastaFilesChannel }
+
+process deduplicate { 
+    cache "deep"; tag "$sample_id"
+    publishDir "$params.output/01_deduplicate", mode: 'copy'
+    errorStrategy 'retry'
+    maxRetries 1
+    maxForks 20
 
     input:
-    path fasta
-    path outputdir
+        tuple sample_id, file(fasta) from fastaFilesChannel
+        file(deduplicate_src)
+    output: 
+        tuple sample_id, file("*") into mkconfig_ch
+        tuple sample_id, file(fasta) into orig_fasta_ch
+        tuple sample_id, "${sample_id}.abundance.csv" into abundance_ch
+        tuple sample_id, "${sample_id}.id_map.csv" into idmap_ch
+        tuple sample_id, "${sample_id}.id_map_seq.csv" into idmap_seq_ch
 
+    shell:
+    '''
+    cat !{fasta} | sed "s/>.*|Abundance:\\([0-9]\\+\\)/>\\1/" > !{fasta}.modified.fa
+    python !{deduplicate_src} \
+        --input !{fasta}.modified.fa \
+        --root GL \
+        --frame 0 \
+        --id_abundances \
+        --output_name !{sample_id} \
+        --output . 
+    '''
+}
+
+process mkconfig {
+    cache "deep"; tag "$sample_id"
+    publishDir "$params.output/02_mkconfig", mode: 'copy'
+    errorStrategy 'retry'
+    maxRetries 1
+    maxForks 5
+
+    input:
+        tuple sample_id, file("*") from mkconfig_ch
+    output: 
+        tuple sample_id, file("*") into dnapars_ch
+    script:
+    """
+    mkconfig --quick ${sample_id}.phylip dnapars > ${sample_id}_dnapars.cfg
+    """
+}
+
+process dnapars_and_inferring_gc_trees {
+    cache "deep"; tag "$sample_id"
+    publishDir "$params.output/03_dnapars", mode: 'copy'
+    errorStrategy 'retry'
+    maxRetries 1
+    maxForks 5
+    
+    input:
+        tuple sample_id, file("*") from dnapars_ch
+        tuple sample_id, "${sample_id}.abundance.csv" from abundance_ch
     output:
-    path "${outputdir}/${fasta.baseName}/*.phylip" into phylip_files
-    path "${outputdir}/${fasta.baseName}/*_dnapars.cfg" into config_files
+        tuple sample_id, file("*") into modify_gctree_colors_ch
 
     script:
     """
-    mkdir -p \${outputdir}/\${fasta.baseName}
+    dnapars < ${sample_id}_dnapars.cfg > ${sample_id}_dnapars.log
 
-    cat \${fasta} | sed 's/>.*|Abundance:\\([0-9]\\+\\)/>\\1/' > \${outputdir}/\${fasta.baseName}/\${fasta.baseName}.modified.fa
+    export QT_QPA_PLATFORM=offscreen
+    export XDG_RUNTIME_DIR=/tmp/runtime-runner
+    export MPLBACKEND=agg
 
-    input_fasta=\${outputdir}/\${fasta.baseName}/\${fasta.baseName}.modified.fa;
+    gctree infer --verbose --root GL --frame 1 --idlabel outfile ${sample_id}.abundance.csv
+    """
+}
 
-    echo -e "Running deduplicate ..."
-    python /home/hieu/src/BCRTree_release/gctree/deduplicated.py \\
-    --input \${input_fasta} \\
-    --root GL \\
-    --frame 0 \\
-    --id_abundances \\
-    --output_name \${fasta.baseName} \\
-    --output \${outputdir}/\${fasta.baseName}
-
-    echo -e "Running mkconfig..."
-    mkconfig --quick \${outputdir}/\${fasta.baseName}/\${fasta.baseName}.phylip dnapars \\
-    > \${outputdir}/\${fasta.baseName}/\${fasta.baseName}_dnapars.cfg
+process modify_gctree_colors {
+    cache "deep"; tag "$sample_id"
+    publishDir "$params.output/03_dnapars", mode: 'copy'
+    errorStrategy 'retry'
+    maxRetries 1
+    maxForks 5
+    
+    input:
+        tuple sample_id, file("*") from modify_gctree_colors_ch
+        tuple sample_id, file(fasta) from orig_fasta_ch
+        tuple sample_id, "${sample_id}.id_map.csv" from idmap_ch
+        tuple sample_id, "${sample_id}.id_map_seq.csv" from idmap_seq_ch
+        file(modify_tree_colors)
+        file(color_path)
+    output:
+        tuple sample_id, file("*") into final_ch
+    script:
+    """
+    python ${modify_tree_colors} \
+    --input_fasta ${fasta} \
+    --input_idmap ${sample_id}.id_map_seq.csv \
+    --gctree_inference_file gctree.out.inference.1.p \
+    --color_path ${color_path} \
+    --output . \
+    --svg_name ${sample_id}.color
     """
 }

@@ -1,0 +1,104 @@
+Jul-10 11:30:21.702 [main] DEBUG nextflow.cli.Launcher - $> nextflow run GCtree_pipeline.nf --input /home/hieu/src/BCRTree_release/gctree/example --output /home/hieu/outdir/gctree_output/nextflow_output --deduplicate_src /home/hieu/src/BCRTree_release/gctree/deduplicated.py --modify_tree_colors /home/hieu/src/BCRTree_release/gctree/modify_tree_colors.py --color_path /home/hieu/src/BCRTree_release/gctree/hex_color.csv -resume -w work
+Jul-10 11:30:21.762 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.10.8
+Jul-10 11:30:21.777 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/root/.nextflow/plugins; core-plugins: nf-amazon@1.11.5,nf-azure@0.14.3,nf-codecommit@0.1.2,nf-console@1.0.4,nf-ga4gh@1.0.5,nf-google@1.4.6,nf-tower@1.5.7-patch0,nf-wave@0.5.5
+Jul-10 11:30:21.785 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-10 11:30:21.786 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-10 11:30:21.788 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul-10 11:30:21.796 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul-10 11:30:21.852 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=1 from script declararion
+Jul-10 11:30:21.869 [main] INFO  nextflow.cli.CmdRun - Launching `GCtree_pipeline.nf` [thirsty_hugle] DSL1 - revision: b93fb10aa3
+Jul-10 11:30:21.869 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul-10 11:30:21.869 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jul-10 11:30:21.882 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /root/.nextflow/secrets/store.json
+Jul-10 11:30:21.889 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@359b650b] - activable => nextflow.secret.LocalSecretsProvider@359b650b
+Jul-10 11:30:21.950 [main] DEBUG nextflow.Session - Session UUID: d164f812-d019-4698-8177-76adcf790fb9
+Jul-10 11:30:21.950 [main] DEBUG nextflow.Session - Run name: thirsty_hugle
+Jul-10 11:30:21.950 [main] DEBUG nextflow.Session - Executor pool size: 12
+Jul-10 11:30:21.961 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=36; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jul-10 11:30:21.991 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.10.8 build 5859
+  Created: 15-04-2023 10:05 UTC 
+  System: Linux 5.15.0-97-generic
+  Runtime: Groovy 3.0.13 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 36653@6e0b838ac37a [172.17.0.3]
+  CPUs: 12 - Mem: 62.6 GB (2.2 GB) - Swap: 29.8 GB (29 GB)
+Jul-10 11:30:22.018 [main] DEBUG nextflow.Session - Work-dir: /home/hieu/src/BCRTree_release/gctree/work [ext2/ext3]
+Jul-10 11:30:22.019 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/hieu/src/BCRTree_release/gctree/bin
+Jul-10 11:30:22.026 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul-10 11:30:22.035 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul-10 11:30:22.054 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul-10 11:30:22.063 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 13; maxThreads: 1000
+Jul-10 11:30:22.144 [main] DEBUG nextflow.Session - Session start
+Jul-10 11:30:23.097 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-10 11:30:23.130 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/hieu/src/BCRTree_release/gctree/example/; pattern: *.fasta; options: [:]
+Jul-10 11:30:23.225 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-10 11:30:23.225 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-10 11:30:23.230 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul-10 11:30:23.234 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=12; memory=62.6 GB; capacity=12; pollInterval=100ms; dumpInterval=5m
+Jul-10 11:30:23.298 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-10 11:30:23.298 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-10 11:30:23.304 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-10 11:30:23.304 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-10 11:30:23.313 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-10 11:30:23.313 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-10 11:30:23.318 [main] DEBUG nextflow.Session - Workflow process names [dsl1]: deduplicate, modify_gctree_colors, dnapars_and_inferring_gc_trees, mkconfig
+Jul-10 11:30:23.319 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+Jul-10 11:30:23.319 [main] DEBUG nextflow.Session - Session await
+Jul-10 11:30:23.459 [Actor Thread 4] INFO  nextflow.processor.TaskProcessor - [ac/347158] Cached process > deduplicate (m11_IGHV1-50*01_IGHJ3*01_39_2.aln)
+Jul-10 11:30:23.478 [Actor Thread 4] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=36; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jul-10 11:30:23.510 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-10 11:30:23.512 [Task submitter] INFO  nextflow.Session - [54/a500f4] Submitted process > mkconfig (m11_IGHV1-50*01_IGHJ3*01_39_2.aln)
+Jul-10 11:30:25.032 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 2; name: mkconfig (m11_IGHV1-50*01_IGHJ3*01_39_2.aln); status: COMPLETED; exit: 0; error: -; workDir: /home/hieu/src/BCRTree_release/gctree/work/54/a500f466f8ea364ca59d19de87e853]
+Jul-10 11:30:25.044 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-10 11:30:25.045 [Task submitter] INFO  nextflow.Session - [06/e972a3] Submitted process > dnapars_and_inferring_gc_trees (m11_IGHV1-50*01_IGHJ3*01_39_2.aln)
+Jul-10 11:30:29.551 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 3; name: dnapars_and_inferring_gc_trees (m11_IGHV1-50*01_IGHJ3*01_39_2.aln); status: COMPLETED; exit: 1; error: -; workDir: /home/hieu/src/BCRTree_release/gctree/work/06/e972a3148dd6ae6429c5f74328faa8]
+Jul-10 11:30:29.557 [Task monitor] INFO  nextflow.processor.TaskProcessor - [06/e972a3] NOTE: Process `dnapars_and_inferring_gc_trees (m11_IGHV1-50*01_IGHJ3*01_39_2.aln)` terminated with an error exit status (1) -- Execution is retried (1)
+Jul-10 11:30:29.562 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+Jul-10 11:30:29.563 [Task submitter] INFO  nextflow.Session - [9f/545795] Re-submitted process > dnapars_and_inferring_gc_trees (m11_IGHV1-50*01_IGHJ3*01_39_2.aln)
+Jul-10 11:30:34.063 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 4; name: dnapars_and_inferring_gc_trees (m11_IGHV1-50*01_IGHJ3*01_39_2.aln); status: COMPLETED; exit: 1; error: -; workDir: /home/hieu/src/BCRTree_release/gctree/work/9f/545795dabdd7509f279a7e69daea41]
+Jul-10 11:30:34.070 [Task monitor] ERROR nextflow.processor.TaskProcessor - Error executing process > 'dnapars_and_inferring_gc_trees (m11_IGHV1-50*01_IGHJ3*01_39_2.aln)'
+
+Caused by:
+  Process `dnapars_and_inferring_gc_trees (m11_IGHV1-50*01_IGHJ3*01_39_2.aln)` terminated with an error exit status (1)
+
+Command executed:
+
+  dnapars < m11_IGHV1-50*01_IGHJ3*01_39_2.aln_dnapars.cfg > m11_IGHV1-50*01_IGHJ3*01_39_2.aln_dnapars.log
+  
+  export QT_QPA_PLATFORM=offscreen
+  export XDG_RUNTIME_DIR=/tmp/runtime-runner
+  export MPLBACKEND=agg
+  
+  gctree infer --verbose --root GL --frame 1 --idlabel outfile m11_IGHV1-50*01_IGHJ3*01_39_2.aln.abundance.csv
+
+Command exit status:
+  1
+
+Command output:
+  (empty)
+
+Command error:
+  Traceback (most recent call last):
+    File "/opt/conda/bin/gctree", line 8, in <module>
+      sys.exit(main())
+               ^^^^^^
+    File "/opt/conda/lib/python3.12/site-packages/gctree/cli.py", line 762, in main
+      args.func(args)
+    File "/opt/conda/lib/python3.12/site-packages/gctree/cli.py", line 169, in infer
+      pp.parse_outfile(args.infiles[0], args.infiles[1], args.root)
+    File "/opt/conda/lib/python3.12/site-packages/gctree/phylip_parse.py", line 124, in parse_outfile
+      line.split(",")[0]: int(line.split(",")[1]) for line in open(abundance_file)
+                                                              ^^^^^^^^^^^^^^^^^^^^
+  FileNotFoundError: [Errno 2] No such file or directory: 'm11_IGHV1-50*01_IGHJ3*01_39_2.aln.abundance.csv'
+
+Work dir:
+  /home/hieu/src/BCRTree_release/gctree/work/9f/545795dabdd7509f279a7e69daea41
+
+Tip: when you have fixed the problem you can continue the execution adding the option `-resume` to the run command line
+Jul-10 11:30:34.073 [main] DEBUG nextflow.Session - Session await > all processes finished
+Jul-10 11:30:34.074 [Task monitor] DEBUG nextflow.Session - Session aborted -- Cause: Process `dnapars_and_inferring_gc_trees (m11_IGHV1-50*01_IGHJ3*01_39_2.aln)` terminated with an error exit status (1)
+Jul-10 11:30:34.085 [main] DEBUG nextflow.Session - Session await > all barriers passed
+Jul-10 11:30:34.092 [main] DEBUG nextflow.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=2; ignoredCount=0; cachedCount=1; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=1; abortedCount=0; succeedDuration=1.5s; failedDuration=8.8s; cachedDuration=184ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=1; peakMemory=0; ]
+Jul-10 11:30:34.285 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+Jul-10 11:30:34.292 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

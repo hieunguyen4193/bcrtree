@@ -1,0 +1,40 @@
+Jul-10 11:26:46.400 [main] DEBUG nextflow.cli.Launcher - $> nextflow run GCtree_pipeline.nf --input /home/hieu/src/BCRTree_release/gctree/example --output /home/hieu/outdir/gctree_output/nextflow_output --deduplicate_src /home/hieu/src/BCRTree_release/gctree/deduplicated.py --modify_tree_colors /home/hieu/src/BCRTree_release/gctree/modify_tree_colors.py --color_path /home/hieu/src/BCRTree_release/gctree/hex_color.csv -resume -w work
+Jul-10 11:26:46.458 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.10.8
+Jul-10 11:26:46.474 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/root/.nextflow/plugins; core-plugins: nf-amazon@1.11.5,nf-azure@0.14.3,nf-codecommit@0.1.2,nf-console@1.0.4,nf-ga4gh@1.0.5,nf-google@1.4.6,nf-tower@1.5.7-patch0,nf-wave@0.5.5
+Jul-10 11:26:46.481 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-10 11:26:46.482 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-10 11:26:46.485 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul-10 11:26:46.493 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul-10 11:26:46.550 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=1 from script declararion
+Jul-10 11:26:46.566 [main] INFO  nextflow.cli.CmdRun - Launching `GCtree_pipeline.nf` [distracted_poincare] DSL1 - revision: 0151994f3a
+Jul-10 11:26:46.567 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul-10 11:26:46.567 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jul-10 11:26:46.580 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /root/.nextflow/secrets/store.json
+Jul-10 11:26:46.586 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@191a709b] - activable => nextflow.secret.LocalSecretsProvider@191a709b
+Jul-10 11:26:46.641 [main] DEBUG nextflow.Session - Session UUID: d164f812-d019-4698-8177-76adcf790fb9
+Jul-10 11:26:46.641 [main] DEBUG nextflow.Session - Run name: distracted_poincare
+Jul-10 11:26:46.641 [main] DEBUG nextflow.Session - Executor pool size: 12
+Jul-10 11:26:46.650 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=36; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jul-10 11:26:46.675 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.10.8 build 5859
+  Created: 15-04-2023 10:05 UTC 
+  System: Linux 5.15.0-97-generic
+  Runtime: Groovy 3.0.13 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 36179@6e0b838ac37a [172.17.0.3]
+  CPUs: 12 - Mem: 62.6 GB (2.2 GB) - Swap: 29.8 GB (29 GB)
+Jul-10 11:26:46.697 [main] DEBUG nextflow.Session - Work-dir: /home/hieu/src/BCRTree_release/gctree/work [ext2/ext3]
+Jul-10 11:26:46.698 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/hieu/src/BCRTree_release/gctree/bin
+Jul-10 11:26:46.705 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul-10 11:26:46.714 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul-10 11:26:46.741 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul-10 11:26:46.752 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 13; maxThreads: 1000
+Jul-10 11:26:46.832 [main] DEBUG nextflow.Session - Session start
+Jul-10 11:26:47.123 [main] ERROR nextflow.cli.Launcher - Script compilation error
+- file : /home/hieu/src/BCRTree_release/gctree/GCtree_pipeline.nf
+- cause: Unexpected character: '\'' @ line 37, column 7.
+       '''
+         ^
+
+1 error
+

@@ -1,0 +1,98 @@
+Jul-10 11:32:21.542 [main] DEBUG nextflow.cli.Launcher - $> nextflow run GCtree_pipeline.nf --input /home/hieu/src/BCRTree_release/gctree/example --output /home/hieu/outdir/gctree_output/nextflow_output --deduplicate_src /home/hieu/src/BCRTree_release/gctree/deduplicated.py --modify_tree_colors /home/hieu/src/BCRTree_release/gctree/modify_tree_colors.py --color_path /home/hieu/src/BCRTree_release/gctree/hex_color.csv -resume -w work
+Jul-10 11:32:21.601 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 22.10.8
+Jul-10 11:32:21.617 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/root/.nextflow/plugins; core-plugins: nf-amazon@1.11.5,nf-azure@0.14.3,nf-codecommit@0.1.2,nf-console@1.0.4,nf-ga4gh@1.0.5,nf-google@1.4.6,nf-tower@1.5.7-patch0,nf-wave@0.5.5
+Jul-10 11:32:21.624 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Jul-10 11:32:21.625 [main] INFO  org.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Jul-10 11:32:21.627 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Jul-10 11:32:21.635 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Jul-10 11:32:21.689 [main] DEBUG nextflow.cli.CmdRun - Applied DSL=1 from script declararion
+Jul-10 11:32:21.705 [main] INFO  nextflow.cli.CmdRun - Launching `GCtree_pipeline.nf` [intergalactic_pare] DSL1 - revision: 57602e167b
+Jul-10 11:32:21.706 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+Jul-10 11:32:21.706 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+Jul-10 11:32:21.719 [main] DEBUG nextflow.secret.LocalSecretsProvider - Secrets store: /root/.nextflow/secrets/store.json
+Jul-10 11:32:21.725 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@191a709b] - activable => nextflow.secret.LocalSecretsProvider@191a709b
+Jul-10 11:32:21.778 [main] DEBUG nextflow.Session - Session UUID: d164f812-d019-4698-8177-76adcf790fb9
+Jul-10 11:32:21.778 [main] DEBUG nextflow.Session - Run name: intergalactic_pare
+Jul-10 11:32:21.778 [main] DEBUG nextflow.Session - Executor pool size: 12
+Jul-10 11:32:21.787 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=36; workQueue=LinkedBlockingQueue[10000]; allowCoreThreadTimeout=false
+Jul-10 11:32:21.813 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 22.10.8 build 5859
+  Created: 15-04-2023 10:05 UTC 
+  System: Linux 5.15.0-97-generic
+  Runtime: Groovy 3.0.13 on OpenJDK 64-Bit Server VM 11.0.13+7-b1751.21
+  Encoding: UTF-8 (UTF-8)
+  Process: 37113@6e0b838ac37a [172.17.0.3]
+  CPUs: 12 - Mem: 62.6 GB (2.2 GB) - Swap: 29.8 GB (29 GB)
+Jul-10 11:32:21.837 [main] DEBUG nextflow.Session - Work-dir: /home/hieu/src/BCRTree_release/gctree/work [ext2/ext3]
+Jul-10 11:32:21.837 [main] DEBUG nextflow.Session - Script base path does not exist or is not a directory: /home/hieu/src/BCRTree_release/gctree/bin
+Jul-10 11:32:21.845 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+Jul-10 11:32:21.853 [main] DEBUG nextflow.Session - Observer factory: DefaultObserverFactory
+Jul-10 11:32:21.872 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+Jul-10 11:32:21.880 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 13; maxThreads: 1000
+Jul-10 11:32:21.961 [main] DEBUG nextflow.Session - Session start
+Jul-10 11:32:22.737 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+Jul-10 11:32:22.773 [PathVisitor-1] DEBUG nextflow.file.PathVisitor - files for syntax: glob; folder: /home/hieu/src/BCRTree_release/gctree/example/; pattern: *.fasta; options: [:]
+Jul-10 11:32:22.873 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-10 11:32:22.873 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-10 11:32:22.879 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+Jul-10 11:32:22.883 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=12; memory=62.6 GB; capacity=12; pollInterval=100ms; dumpInterval=5m
+Jul-10 11:32:22.954 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: null
+Jul-10 11:32:22.954 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+Jul-10 11:32:22.968 [main] DEBUG nextflow.Session - Session aborted -- Cause: No signature of method: nextflow.script.params.TupleOutParam.from() is applicable for argument types: (groovyx.gpars.dataflow.DataflowQueue) values: [DataflowQueue(queue=[])]
+Possible solutions: find(), grep(), grep(java.lang.Object), find(groovy.lang.Closure), wait(), clone()
+Jul-10 11:32:22.988 [main] DEBUG nextflow.Session - The following nodes are still active:
+[process] deduplicate
+  status=ACTIVE
+  port 0: (queue) closed; channel: -
+  port 1: (value) bound ; channel: deduplicate_src
+  port 2: (cntrl) -     ; channel: $
+
+[process] mkconfig
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (cntrl) -     ; channel: $
+
+Jul-10 11:32:22.995 [main] ERROR nextflow.cli.Launcher - @unknown
+groovy.lang.MissingMethodException: No signature of method: nextflow.script.params.TupleOutParam.from() is applicable for argument types: (groovyx.gpars.dataflow.DataflowQueue) values: [DataflowQueue(queue=[])]
+Possible solutions: find(), grep(), grep(java.lang.Object), find(groovy.lang.Closure), wait(), clone()
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.unwrap(ScriptBytecodeAdapter.java:70)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:50)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:125)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:139)
+	at Script_5f2a4ce4$_runScript_closure5.doCall(Script_5f2a4ce4:78)
+	at Script_5f2a4ce4$_runScript_closure5.doCall(Script_5f2a4ce4)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+	at org.codehaus.groovy.runtime.metaclass.ClosureMetaClass.invokeMethod(ClosureMetaClass.java:274)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1035)
+	at groovy.lang.Closure.call(Closure.java:412)
+	at groovy.lang.Closure.call(Closure.java:406)
+	at nextflow.script.ProcessFactory.createProcessor(ProcessFactory.groovy:95)
+	at nextflow.script.ProcessFactory$createProcessor.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+	at nextflow.script.ProcessFactory$createProcessor.call(Unknown Source)
+	at nextflow.script.BaseScript.process(BaseScript.groovy:114)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.codehaus.groovy.runtime.callsite.PlainObjectMetaMethodSite.doInvoke(PlainObjectMetaMethodSite.java:43)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite$PogoCachedMethodSiteNoUnwrapNoCoerce.invoke(PogoMetaMethodSite.java:193)
+	at org.codehaus.groovy.runtime.callsite.PogoMetaMethodSite.callCurrent(PogoMetaMethodSite.java:61)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:51)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:171)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:194)
+	at Script_5f2a4ce4.runScript(Script_5f2a4ce4:67)
+	at nextflow.script.BaseScript.runDsl1(BaseScript.groovy:164)
+	at nextflow.script.BaseScript.run(BaseScript.groovy:217)
+	at nextflow.script.ScriptParser.runScript(ScriptParser.groovy:230)
+	at nextflow.script.ScriptRunner.run(ScriptRunner.groovy:225)
+	at nextflow.script.ScriptRunner.execute(ScriptRunner.groovy:131)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:354)
+	at nextflow.cli.Launcher.run(Launcher.groovy:487)
+	at nextflow.cli.Launcher.main(Launcher.groovy:646)

@@ -13,4 +13,4 @@ COPY . /gctree
 WORKDIR /gctree
 CMD . tests/test.sh
 RUN apt-get install curl -y
-RUN curl -s https://get.nextflow.io | bash && chmod +x nextflow && mv nextflow /usr/local/bin 
+RUN wget https://github.com/nextflow-io/nextflow/releases/download/v22.10.8/nextflow| bash && chmod +x nextflow && mv nextflow /usr/local/bin 
