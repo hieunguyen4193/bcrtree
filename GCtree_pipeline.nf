@@ -56,7 +56,7 @@ process mkconfig {
     publishDir "$params.output/02_mkconfig", mode: 'copy'
     errorStrategy 'terminate'
     maxRetries 1
-    maxForks 5
+    maxForks 10
 
     input:
         tuple sample_id, file("*") from mkconfig_ch
@@ -73,7 +73,7 @@ process dnapars_and_inferring_gc_trees {
     publishDir "$params.output/03_dnapars", mode: 'copy'
     errorStrategy 'terminate'
     maxRetries 1
-    maxForks 5
+    maxForks 10
     
     input:
         tuple sample_id, file("*") from dnapars_ch
@@ -98,7 +98,7 @@ process modify_gctree_colors {
     publishDir "$params.output/03_dnapars", mode: 'copy'
     errorStrategy 'terminate'
     maxRetries 1
-    maxForks 5
+    maxForks 10
     
     input:
         tuple sample_id, file("*") from modify_gctree_colors_ch
