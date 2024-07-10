@@ -1,3 +1,0 @@
-QStandardPaths: XDG_RUNTIME_DIR not set, defaulting to '/tmp/runtime-root'
-This plugin does not support propagateSizeHints()
-This plugin does not support raise()

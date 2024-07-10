@@ -1,3 +1,0 @@
-usage: mkconfig [-h] [--quick] [--jumble JUMBLE] [--bootstrap BOOTSTRAP]
-                phylip treeprog
-mkconfig: error: unrecognized arguments: m11_IGHV1-50301_IGHJ3301_39_2.aln.phylip m11_IGHV1-50401_IGHJ3401_39_2.aln.phylip m11_IGHV1-50501_IGHJ3501_39_2.aln.phylip dnapars

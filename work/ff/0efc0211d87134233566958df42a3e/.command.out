@@ -1,7 +1,0 @@
-number of trees with integer branch lengths: 4
-Branching process parameters to be used for ranking: (np.float64(0.4997999257636556), np.float64(0.026020816101201483))
-Ranking trees to maximize LogBPLikelihood then minimize Alleles
-
-Stats for optimal trees:
-tree     	LogBPLikelihood	Alleles        
-1         	-414.1443338	66        

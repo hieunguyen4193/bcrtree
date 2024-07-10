@@ -146,8 +146,10 @@ for (mouse.id in unique(mid.metadata$mouse)){
   V.gene <- str_split(input.VJ.combi, "_")[[1]][[1]]
   J.gene <- str_split(input.VJ.combi, "_")[[1]][[2]]
   CDR3.length <- as.numeric(str_split(input.VJ.combi, "_")[[1]][[3]])
-  
-    path.to.output.fasta <- file.path(path.to.02.output, mouse.id, sprintf("%s_%s.aln.fasta", mouse.id, input.VJ.combi))
+    # remove the * sign in the file name
+    path.to.output.fasta <- file.path(path.to.02.output, mouse.id, sprintf("%s_%s.aln.fasta", 
+                                                                           mouse.id, 
+                                                                           str_replace_all(input.VJ.combi, "[*]", "-")))
     if (file.exists(path.to.output.fasta) == FALSE){
       fasta.output <- subset(clonesets, clonesets[[sprintf("VJcombi_CDR3_%s", thres)]] == input.VJ.combi)[, c("targetSequences", "uniqueMoleculeCount", "V.gene", "D.gene", "J.gene", "id", "aaSeqCDR3", "nSeqCDR3")]
       colnames(fasta.output) <- c("seq", "abundance", "V.gene", "D.gene", "J.gene", "SampleID", "CDR3aa", "CDR3nt")

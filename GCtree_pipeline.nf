@@ -10,10 +10,11 @@ params.output=""
 deduplicate_src=file(params.deduplicate_src)
 modify_tree_colors=file(params.modify_tree_colors)
 color_path=file(params.color_path)
+params.file_pattern=""
 
 // Create a channel that emits files from the specified input directory
 Channel
-    .fromPath("${params.input}/*.fasta")
+    .fromPath("${params.input}/${params.file_pattern}")
     .map { file ->
         def sample_id = file.baseName.replace(".aln.fasta", "") // Assuming "aln" is part of the base name to remove
         return [sample_id, file] // Return a tuple of sampleID and the file object
@@ -23,7 +24,7 @@ Channel
 process deduplicate { 
     cache "deep"; tag "$sample_id"
     publishDir "$params.output/01_deduplicate", mode: 'copy'
-    errorStrategy 'retry'
+    errorStrategy 'terminate'
     maxRetries 1
     maxForks 20
 
@@ -53,7 +54,7 @@ process deduplicate {
 process mkconfig {
     cache "deep"; tag "$sample_id"
     publishDir "$params.output/02_mkconfig", mode: 'copy'
-    errorStrategy 'retry'
+    errorStrategy 'terminate'
     maxRetries 1
     maxForks 5
 
@@ -70,7 +71,7 @@ process mkconfig {
 process dnapars_and_inferring_gc_trees {
     cache "deep"; tag "$sample_id"
     publishDir "$params.output/03_dnapars", mode: 'copy'
-    errorStrategy 'retry'
+    errorStrategy 'terminate'
     maxRetries 1
     maxForks 5
     
@@ -95,7 +96,7 @@ process dnapars_and_inferring_gc_trees {
 process modify_gctree_colors {
     cache "deep"; tag "$sample_id"
     publishDir "$params.output/03_dnapars", mode: 'copy'
-    errorStrategy 'retry'
+    errorStrategy 'terminate'
     maxRetries 1
     maxForks 5
     
