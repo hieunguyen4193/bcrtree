@@ -23,7 +23,7 @@ Channel
 
 process deduplicate { 
     cache "deep"; tag "$sample_id"
-    publishDir "$params.output/01_deduplicate", mode: 'copy'
+    publishDir "$params.output/$sample_id/01_deduplicate", mode: 'copy'
     errorStrategy 'terminate'
     maxRetries 1
     maxForks 20
@@ -32,11 +32,12 @@ process deduplicate {
         tuple sample_id, file(fasta) from fastaFilesChannel
         file(deduplicate_src)
     output: 
-        tuple sample_id, file("*") into mkconfig_ch
+        tuple sample_id, file("${sample_id}*") into mkconfig_ch
         tuple sample_id, file(fasta) into orig_fasta_ch
         tuple sample_id, "${sample_id}.abundance.csv" into abundance_ch
         tuple sample_id, "${sample_id}.id_map.csv" into idmap_ch
         tuple sample_id, "${sample_id}.id_map_seq.csv" into idmap_seq_ch
+        tuple sample_id, "${sample_id}.phylip" into phylip_ch
 
     shell:
     '''
@@ -51,52 +52,37 @@ process deduplicate {
     '''
 }
 
-process mkconfig {
-    cache "deep"; tag "$sample_id"
-    publishDir "$params.output/02_mkconfig", mode: 'copy'
-    errorStrategy 'terminate'
-    maxRetries 1
-    maxForks 10
-
-    input:
-        tuple sample_id, file("*") from mkconfig_ch
-    output: 
-        tuple sample_id, file("*") into dnapars_ch
-    script:
-    """
-    mkconfig --quick ${sample_id}.phylip dnapars > ${sample_id}_dnapars.cfg
-    """
-}
-
 process dnapars_and_inferring_gc_trees {
     cache "deep"; tag "$sample_id"
-    publishDir "$params.output/03_dnapars", mode: 'copy'
-    errorStrategy 'terminate'
+    publishDir "$params.output/$sample_id/02_dnapars", mode: 'copy'
+    errorStrategy 'ignore'
     maxRetries 1
     maxForks 10
     
     input:
-        tuple sample_id, file("*") from dnapars_ch
+        tuple sample_id, file("${sample_id}*") from mkconfig_ch
         tuple sample_id, "${sample_id}.abundance.csv" from abundance_ch
+        tuple sample_id, "${sample_id}.phylip" from phylip_ch
     output:
         tuple sample_id, file("*") into modify_gctree_colors_ch
 
-    script:
-    """
-    dnapars < ${sample_id}_dnapars.cfg > ${sample_id}_dnapars.log
+    shell:
+    '''
+    mkconfig --quick !{sample_id}.phylip dnapars > !{sample_id}_dnapars.cfg
+    dnapars < !{sample_id}_dnapars.cfg > !{sample_id}_dnapars.log
 
     export QT_QPA_PLATFORM=offscreen
     export XDG_RUNTIME_DIR=/tmp/runtime-runner
     export MPLBACKEND=agg
 
-    gctree infer --verbose --root GL --frame 1 --idlabel outfile ${sample_id}.abundance.csv
-    """
+    gctree infer --verbose --root GL --frame 1 --idlabel outfile !{sample_id}.abundance.csv
+    '''
 }
 
 process modify_gctree_colors {
     cache "deep"; tag "$sample_id"
-    publishDir "$params.output/03_dnapars", mode: 'copy'
-    errorStrategy 'terminate'
+    publishDir "$params.output/$sample_id/03_modify_gctree_colors", mode: 'copy'
+    errorStrategy 'ignore'
     maxRetries 1
     maxForks 10
     
@@ -108,9 +94,12 @@ process modify_gctree_colors {
         file(modify_tree_colors)
         file(color_path)
     output:
-        tuple sample_id, file("*") into final_ch
+        tuple sample_id, file("*.svg") into final_ch
     script:
     """
+    export QT_QPA_PLATFORM=offscreen
+    export XDG_RUNTIME_DIR=/tmp/runtime-runner
+    export MPLBACKEND=agg
     python ${modify_tree_colors} \
     --input_fasta ${fasta} \
     --input_idmap ${sample_id}.id_map_seq.csv \
