@@ -1,8 +1,8 @@
 gc()
 rm(list = ls())
 
-# path.to.project.src <- "/home/hieu/src/BCRTree_release/gctree/data_analysis"
-path.to.project.src <- "/home/hieunguyen/CRC1382/src_2023/bcrtree/data_analysis"
+path.to.project.src <- "/home/hieu/src/BCRTree_release/gctree/data_analysis"
+# path.to.project.src <- "/home/hieunguyen/CRC1382/src_2023/bcrtree/data_analysis"
 source(file.path(path.to.project.src, "import_libraries.R"))
 source(file.path(path.to.project.src, "helper_functions.R"))
 
@@ -30,8 +30,8 @@ library(ggtree)
 library(ape)
 library(igraph)
 
-# outdir <- "/home/hieu/outdir" # molmed servers
-outdir <- "/home/hieunguyen/CRC1382/outdir/molmed_server" # CRC1382 servers
+outdir <- "/home/hieu/outdir" # molmed servers
+# outdir <- "/home/hieunguyen/CRC1382/outdir/molmed_server" # CRC1382 servers
 PROJECT <- "mixcr_pipeline_output"
 ##### AA sequence similarity threshold
 thres <- 0.15
