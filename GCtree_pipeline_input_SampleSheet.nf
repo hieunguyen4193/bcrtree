@@ -64,7 +64,7 @@ process dnapars_and_inferring_gc_trees {
     publishDir "$params.output/$sample_id/02_dnapars", mode: 'copy'
     errorStrategy 'ignore'
     maxRetries 1
-    maxForks 25
+    maxForks 20
     
     input:
         tuple sample_id, file("${sample_id}*") from mkconfig_ch
