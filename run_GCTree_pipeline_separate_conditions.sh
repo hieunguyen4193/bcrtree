@@ -6,6 +6,7 @@ output=${outdir}/${output_version};
 mkdir -p ${output};
 
 samplesheet="/home/hieunguyen/CRC1382/src_2023/bcrtree/SampleSheets/m14_all_YFP_SampleSheet.csv"
+samplesheet_name=$(echo $samplesheet | xargs -n 1 basename);
 
 deduplicate_src=${project_src}/deduplicated.py;
 modify_tree_colors=${project_src}/modify_tree_colors.py;
@@ -17,7 +18,7 @@ rm -rf $work
 
 nextflow run GCtree_pipeline_input_SampleSheet.nf \
 --samplesheet ${samplesheet} \
---output ${output}/${samplesheet%.csv*} \
+--output ${output}/${samplesheet_name%.csv*} \
 --deduplicate_src ${deduplicate_src} \
 --modify_tree_colors ${modify_tree_colors} \
 --color_path ${color_path} -resume -w ${work}
