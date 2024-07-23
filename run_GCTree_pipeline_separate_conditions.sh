@@ -8,7 +8,8 @@ mkdir -p ${output};
 # samplesheet="/home/hieunguyen/CRC1382/src_2023/bcrtree/SampleSheets/m14_all_YFP_SampleSheet.csv"
 
 all_sample_sheets=$(ls ./SampleSheets/*.csv);
-for samplesheet in ${all_sample_sheets};do \
+
+samplesheet="/home/hieunguyen/CRC1382/src_2023/bcrtree/all_fasta_SampleSheet.csv"
 samplesheet_name=$(echo $samplesheet | xargs -n 1 basename);
 
 deduplicate_src=${project_src}/deduplicated.py;
@@ -25,5 +26,3 @@ nextflow run GCtree_pipeline_input_SampleSheet.nf \
 --color_path ${color_path} -resume -w ${work};
 
 rm -rf $work;
-
-done

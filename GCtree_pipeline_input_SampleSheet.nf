@@ -25,7 +25,6 @@ Channel
         def path = row.path
         return [sample_id, file(path)]
     }
-    .view()
     .set { fastaFilesChannel }
     
 process deduplicate { 
