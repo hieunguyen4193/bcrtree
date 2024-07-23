@@ -52,6 +52,7 @@ mid.metadata <- read.csv(path.to.mid.metadata, sep = ";")
 
 mid.metadata$timepoint <- mid.metadata$population
 
+count.mid.in.mouse <- table(mid.metadata$population, mid.metadata$mouse) %>% colSums()
 #####----------------------------------------------------------------------#####
 ##### Get clone information dataframes
 #####----------------------------------------------------------------------#####
@@ -62,7 +63,7 @@ names(all.clones.tables) <- unlist(lapply(
   }
 ))
 
-for (mouse.id in unique(mid.metadata$mouse)){
+for (mouse.id in names(count.mid.in.mouse[count.mid.in.mouse >= 4])){
   # we have 3 cases: all YFP, YFP+ only and YFP- only. 
   yfp.mids <- list(all = subset(mid.metadata, mid.metadata$mouse == mouse.id & grepl("YFP", mid.metadata$population) == TRUE)$X,
                    pos = subset(mid.metadata, mid.metadata$mouse == mouse.id & grepl("YFP[+]", mid.metadata$population) == TRUE)$X,
@@ -150,6 +151,9 @@ for (mouse.id in unique(mid.metadata$mouse)){
     #####---------------------------------------------------------------------#####
     ##### generate fasta file for input to other tree generation tools
     #####---------------------------------------------------------------------#####
+    path.to.output.count <- file.path(path.to.05.output, sprintf("count_%s.csv", mouse.id))
+    list.vj.combi <- c()
+    list.count.seq <- c()
     for (input.VJ.combi in unique(clonesets[[sprintf("VJcombi_CDR3_%s", thres)]])){
       V.gene <- str_split(input.VJ.combi, "_")[[1]][[1]]
       J.gene <- str_split(input.VJ.combi, "_")[[1]][[2]]
@@ -172,7 +176,8 @@ for (mouse.id in unique(mid.metadata$mouse)){
           ##### multiple alignment sequences, package MSA. 
           MiXCRtreeVDJ <- all.seqs %>% DNAStringSet()
           msaMiXCRtreeVDJ <- msa(inputSeqs = MiXCRtreeVDJ, verbose = TRUE)
-          
+          list.vj.combi <- c(list.vj.combi, input.VJ.combi)
+          list.count.seq <- c(list.count.seq, length(all.seqs))
           sink(path.to.output.fasta)
           for (i in seq(1, length(all.seqs))){
             if (i == length(all.seqs)){
@@ -202,6 +207,8 @@ for (mouse.id in unique(mid.metadata$mouse)){
         }
       }
     }
+    countdf <- data.frame(VJ.combi = list.vj.combi, count.seq = list.count.seq)
+    write.csv(countdf, path.to.output.count)
   }
 }
 
