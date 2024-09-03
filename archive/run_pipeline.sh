@@ -1,4 +1,5 @@
 path_to_input="/mnt/storage/data/local/mol_med/bcr/220701_etc_biopsies/samples";
+
 files=$(ls ${path_to_input}/*R1*.fastq*);
 for file in $files;do \
 filename=$(echo $file | xargs -n 1 basename);
@@ -12,7 +13,7 @@ echo $sampleid;
 echo -e $fastq1;
 echo -e $fastq2;
 
-bash pipeline.sh $sampleid $fastq1 $fastq2;
+bash mixcr_pipeline.sh $sampleid $fastq1 $fastq2;
 done
 
 echo -e  "Sync and group MID data into mouse based data";
